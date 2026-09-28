@@ -5,7 +5,7 @@
 [![Docs](https://img.shields.io/badge/doc-Doxygen-purple)](./doc/index.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-This C++ program demonstrates how a binary semaphore controls access to a shared printer. It creates 10 print-job threads. Each thread represents one job and requests access to the printer. The job holds the semaphore while printing is simulated for one second, then releases it so another waiting job can proceed.
+This C++ program demonstrates how a binary semaphore controls access to a shared printer. It creates a number of print job threads, each representing a job and requesting access to the printer. The job holds the semaphore while printing is simulated for one second, then releases it so another waiting job can proceed.
 
 The semaphore starts with a count of one, allowing one job into the printing section at a time. Other threads wait until the current job releases it. The semaphore does not guarantee which waiting thread goes next, so the print order can vary between runs.
 
