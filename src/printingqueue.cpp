@@ -23,7 +23,6 @@ using std::this_thread::sleep_for;
 
 /**
  * @brief Constructor for PrintingQueue.
- * @param initialCount The initial count for the binary semaphore.
  */
 PrintingQueue::PrintingQueue() : access(1) {}
 

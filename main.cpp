@@ -22,9 +22,13 @@ using std::vector;
 #include "job.h"
 #include "printingqueue.h"
 
+/** @brief Number of print jobs to simulate */
 # define NUM_JOBS 10
 
-/** @brief Main function */
+/**
+ * @brief Main function
+ * @return Exit status code
+ */
 int main() {
     PrintingQueue queue;
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Synchronizing a printing queue using a binary semaphore: src/job.cpp File Reference</title>
+<title>Synchronizing a printing queue using a binary semaphore: include/job.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -71,21 +71,31 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>src</b></li>  </ul>
+<li class="navelem"><b>include</b></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">job.cpp File Reference</div></div>
+  <div class="summary">
+<a href="#nested-classes">Classes</a>  </div>
+  <div class="headertitle"><div class="title">job.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Implementation of a print job.  
+<p>Representation of a print job.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
-<code>#include &quot;<a class="el" href="job_8h_source.html">job.h</a>&quot;</code><br />
-</div><a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Implementation of a print job. </p>
+<div class="textblock"><code>#include &lt;string&gt;</code><br />
+<code>#include &quot;<a class="el" href="printingqueue_8h_source.html">printingqueue.h</a>&quot;</code><br />
+</div>
+<p><a href="job_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:Job" id="r_Job"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_job.html">Job</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a print job that can be executed in a separate thread, interacting with a <a class="el" href="class_printing_queue.html" title="Represents a printing queue as a shared resource, with exclusive access controlled by a binary semaph...">PrintingQueue</a>.  <a href="class_job.html#details">More...</a><br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Representation of a print job. </p>
 <dl class="section author"><dt>Author</dt><dd>Everton Cavalcante (<a href="#" onclick="location.href='mai'+'lto:'+'eve'+'rt'+'on.'+'ca'+'val'+'ca'+'nte'+'@u'+'frn'+'.b'+'r'; return false;">evert<span class="obfuscator">.nosp@m.</span>on.c<span class="obfuscator">.nosp@m.</span>avalc<span class="obfuscator">.nosp@m.</span>ante<span class="obfuscator">.nosp@m.</span>@ufrn<span class="obfuscator">.nosp@m.</span>.br</a>) </dd></dl>
 <dl class="section since"><dt>Since</dt><dd>September 28, 2026 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>September 29, 2026 </dd></dl>
