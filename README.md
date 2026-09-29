@@ -15,15 +15,16 @@ This project is part of the **Concurrent Programming** module at the [Federal Un
 
 ```text
 .
-├── include/
+├── doc/                    # Documentation
+├── include/                # Directory with header files
 │   ├── job.h               # Definition of the Job class
 │   └── printingqueue.h     # Definition of the PrintingQueue class
-├── src/
+├── src/                    # Directory with source files
 │   ├── job.cpp             # Implementation of the Job class
 │   └── printingqueue.cpp   # Implementation of the PrintingQueue class
 ├── Doxyfile                # Doxygen configuration
 ├── main.cpp                # Main program
-├── Makefile                # Build and clean targets
+├── Makefile
 └── README.md
 ```
 
@@ -35,6 +36,8 @@ This project is part of the **Concurrent Programming** module at the [Federal Un
 - A terminal or IDE
 - GNU Make for the Makefile targets
 - [Doxygen](https://www.doxygen.nl), only if you want to generate the HTML documentation
+
+The Makefile currently sets `CC=g++-15`, so that command must exist on `PATH` when building C++ examples through `make`.
 
 ### 🔧 Compilation
 
@@ -76,7 +79,7 @@ Remove compiled objects and executables with:
 make clean
 ```
 
-This removes compiled objects and the executable while leaving source files and the Doxygen configuration untouched. Doxygen generates the HTML documentation under `doc/`.
+This removes compiled objects and the executables.
 
 ## 🤝 Contributing
 
