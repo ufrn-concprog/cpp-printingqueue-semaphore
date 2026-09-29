@@ -3,8 +3,11 @@
  * @brief	Representation of a print job
  * @author	Everton Cavalcante (everton.cavalcante@ufrn.br)
  * @since	September 28, 2026
- * @date	September 28, 2026
+ * @date	September 29, 2026
  */
+
+#ifndef JOB_H
+#define JOB_H
 
 #include <string>
 using std::string;
@@ -34,3 +37,5 @@ private:
     /** @brief A reference to the PrintingQueue to which the job belongs. */
     PrintingQueue& queue;
 };
+
+#endif

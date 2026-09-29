@@ -3,8 +3,11 @@
  * @brief	Representation of a printing queue as a shared resource
  * @author	Everton Cavalcante (everton.cavalcante@ufrn.br)
  * @since	September 28, 2026
- * @date	September 28, 2026
+ * @date	September 29, 2026
  */
+
+#ifndef PRINTINGQUEUE_H
+#define PRINTINGQUEUE_H
 
 #include <semaphore>
 using std::binary_semaphore;
@@ -29,5 +32,7 @@ public:
 
 private:
     /** @brief Binary semaphore to control exclusive access to the printing queue. */
-    binary_semaphore access;
+    std::binary_semaphore access;
 };
+
+#endif // PRINTINGQUEUE_H
