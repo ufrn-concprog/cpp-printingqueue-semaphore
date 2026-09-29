@@ -3,12 +3,15 @@
  * @brief   A simple program to demonstrate a printing queue using threads and binary semaphores in C++
  * @author	Everton Cavalcante (everton.cavalcante@ufrn.br)
  * @since	September 28, 2026
- * @date	September 28, 2026
+ * @date	September 29, 2026
  */
 
 #include <iostream>
 using std::cout;
 using std::endl;
+
+#include <string>
+using std::string;
 
 #include <thread>
 using std::thread;
@@ -25,18 +28,15 @@ using std::vector;
 int main() {
     PrintingQueue queue;
 
-    std::vector<Job> jobs;
+    std::vector<thread> jobList;
     for (int i = 1; i <= NUM_JOBS; ++i) {
-        jobs.emplace_back("Job " + std::to_string(i), queue);
+        string name = "Job " + std::to_string(i);
+        cout << "Printing job sent: " << name << endl;
+        jobList.emplace_back(Job(name, queue));
     }
 
-    std::vector<std::thread> threads;
-    for (auto& job : jobs) {
-        threads.emplace_back(std::ref(job));
-    }
-
-    for (auto& t : threads) {
-        t.join();
+    for (auto& job : jobList) {
+        job.join();
     }
 
     cout << "All printing jobs are finished" << endl;
