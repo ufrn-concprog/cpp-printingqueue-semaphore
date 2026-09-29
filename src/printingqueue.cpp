@@ -3,10 +3,8 @@
  * @brief	Implementation of a printing queue as a shared resource
  * @author	Everton Cavalcante (everton.cavalcante@ufrn.br)
  * @since	September 28, 2026
- * @date	September 28, 2026
+ * @date	September 29, 2026
  */
-
-#include "printingqueue.h"
 
 #include <chrono>
 using std::chrono::seconds;
@@ -15,8 +13,13 @@ using std::chrono::seconds;
 using std::cout;
 using std::endl;
 
+#include <syncstream>
+using std::osyncstream;
+
 #include <thread>
-using std::this_thread;
+using std::this_thread::sleep_for;
+
+#include "printingqueue.h"
 
 /**
  * @brief Constructor for PrintingQueue.
@@ -29,11 +32,14 @@ PrintingQueue::PrintingQueue() : access(1) {}
  * @param jobName The name of the print job to be added to the queue.
  */
 void PrintingQueue::printJob(const string& jobName) {
+    osyncstream scout(std::cout);
     access.acquire();  // down / wait
 
-    cout << "Printing " << jobName << "...\n";
-    this_thread::sleep_for(seconds(1));  // simulate printing time
-    cout << jobName << " done printing\n";
+    // Thread is suspended by a random time interval to
+    // simulate the printing job
+    int delay = rand() % 5 + 1;
+    scout << jobName << " printing for " << delay << " second(s)" << endl;
+    sleep_for(seconds(delay));
 
     access.release();  // up / signal
 }
